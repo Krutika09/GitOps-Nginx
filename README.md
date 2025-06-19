@@ -36,6 +36,21 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 ## 2️⃣ Verify ArgoCD Installation
 ```sh
 kubectl get all -n argocd
+
+```
+### Fixed Issues During ArgoCD Setup
+
+* ❌ *Issue:* `argocd-server` pod showed `CreateContainerConfigError`
+
+* ✅ *Fix:* One of the required secrets (`argocd-redis`) was missing. We restarted Minikube and ArgoCD pods reinitialized correctly.
+
+* ❌ *Issue:* `kubectl port-forward` failed with TLS handshake timeout
+
+* ✅ *Fix:* `apiserver` was down. Restarted Minikube:
+
+```bash
+minikube stop
+minikube start
 ```
 
 ## 3️⃣ Port Forward ArgoCD Server
