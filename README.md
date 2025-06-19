@@ -1,7 +1,31 @@
-# Deploy ArgoCD and Configure GitOps
-```
-minikube status
-```
+# 🚀 K8s GitOps with ArgoCD – NGINX Deployment
+
+This project demonstrates how to deploy an NGINX application on Kubernetes using **GitOps** principles with **ArgoCD**.
+
+
+## ✅ Project Objectives
+
+- Deploy NGINX to a Kubernetes cluster using ArgoCD
+- Manage Kubernetes resources declaratively from a GitHub repository
+- Sync application state automatically from Git
+
+
+## 📦 Technologies Used
+
+- **Kubernetes (Minikube)**
+- **ArgoCD**
+- **GitHub**
+- **kubectl + ArgoCD CLI**
+
+---
+
+## 🛠️ Steps Performed
+
+### 1. Started Minikube Cluster
+
+```bash
+minikube start
+````
 
 ## 1️⃣ Install ArgoCD
 ```sh
@@ -53,6 +77,9 @@ argocd app list
 argocd app get nginx-app
 ```
 
+![image](https://github.com/user-attachments/assets/dd9d9bb5-fd5e-4a83-b90c-3923027df73c)
+
+
 ## 8️⃣ Sync ArgoCD Application
 ```sh
 argocd app sync nginx-app
@@ -86,4 +113,6 @@ kubectl port-forward svc/nginx-service 8081:80 -n default
 ```
 http://localhost:8081
 ```
+![image](https://github.com/user-attachments/assets/c2b43513-cc5a-48b2-a677-061338f03f89)
+
 ---
