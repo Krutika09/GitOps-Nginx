@@ -87,7 +87,7 @@ argocd login localhost:8080 --username admin --password sR6uPuLoHeaxOqPq --insec
 
 ## 7️⃣ Create and Manage ArgoCD Application
 ```sh
-argocd app create nginx-app --repo https://github.com/Krutika09/GitOps-Nginx.git --path . --dest-server https://kubernetes.default.svc --dest-namespace default
+argocd app create nginx-app --repo https://github.com/Krutika09/K8s-GitOps-Argocd-Nginx.git --path . --dest-server https://kubernetes.default.svc --dest-namespace default
 argocd app list
 argocd app get nginx-app
 ```
